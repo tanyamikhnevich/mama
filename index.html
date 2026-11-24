@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Истории для мамы</title>
+<meta name="description" content="С Днём матери, мамуля! Твои Таня и Света">
+<meta name="color-scheme" content="light">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💗</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #fbf6f3;
+    --paper: #fffdfb;
+    --ink: #3b3240;
+    --muted: #7d707b;
+
+    --sveta: #d98ba0;
+    --sveta-ink: #a84f6a;
+    --sveta-soft: #fbecef;
+    --sveta-line: #f0c9d3;
+
+    --tanya: #a395d6;
+    --tanya-ink: #6656ad;
+    --tanya-soft: #f0edfa;
+    --tanya-line: #d3cbef;
+
+    --both: linear-gradient(120deg, var(--sveta) 0%, var(--tanya) 100%);
+    --both-ink: linear-gradient(120deg, var(--sveta-ink) 0%, var(--tanya-ink) 100%);
+
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --body: "Lora", Georgia, serif;
+    --hand: "Caveat", "Segoe Print", cursive;
+
+    --card-px: 28px;
+    --card-pb: 28px;
+    --voice-px: 44px;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  p { margin: 0 0 1em; }
+  p:last-child { margin-bottom: 0; }
+  button { font: inherit; color: inherit; }
+
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  .narrow { max-width: 660px; margin: 0 auto; }
+
+  .grad-text {
+    background: var(--both-ink);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    min-height: 100svh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    position: relative;
+    padding: 64px 16px 110px;
+    background:
+      radial-gradient(circle at 18% 28%, rgba(217,139,160,.28), transparent 42%),
+      radial-gradient(circle at 82% 70%, rgba(163,149,214,.30), transparent 45%),
+      var(--bg);
+  }
+  .hero .eyebrow {
+    font-family: var(--body);
+    font-size: 13px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    padding-left: .32em;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(60px, min(15vw, 15vh), 140px);
+    line-height: .95;
+    margin: 0;
+    padding: 0 .08em .06em;
+  }
+  .hero .mamulya {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: clamp(46px, min(11vw, 11vh), 96px);
+    line-height: 1;
+    color: var(--sveta-ink);
+    margin-top: -.08em;
+    transform: rotate(-4deg);
+  }
+  .hero .ornament {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    color: var(--sveta);
+    font-size: 18px;
+    margin: 30px auto 20px;
+  }
+  .hero .ornament span { width: 56px; height: 1px; background: linear-gradient(90deg, transparent, var(--tanya-line)); }
+  .hero .ornament span:last-child { background: linear-gradient(90deg, var(--sveta-line), transparent); }
+  .hero .subtitle {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--muted);
+    line-height: 1.2;
+    margin-bottom: 2px;
+  }
+  .hero .from { display: inline-flex; gap: 10px; align-items: center; font-family: var(--hand); font-size: 28px; }
+  .hero .from .s { color: var(--sveta-ink); }
+  .hero .from .t { color: var(--tanya-ink); }
+  .hero .from .amp { color: var(--muted); font-size: 24px; }
+
+  .music-start {
+    margin-top: 34px;
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 9px 18px 9px 12px;
+    border: 1px solid rgba(125,112,123,.28);
+    border-radius: 999px;
+    background: rgba(255,255,255,.45);
+    cursor: pointer;
+    font-family: var(--body);
+    font-size: 14px;
+    letter-spacing: .04em;
+    line-height: 1;
+    color: var(--muted);
+    transition: background .2s, border-color .2s, color .2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  @media (hover: hover) { .music-start:hover { background: #fff; border-color: var(--tanya-line); color: var(--ink); } }
+  .music-start .note {
+    width: 24px; height: 24px; border-radius: 50%;
+    display: grid; place-items: center;
+    font-size: 13px;
+    color: var(--tanya-ink);
+    background: var(--tanya-soft);
+    animation: pulse 2.8s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(163,149,214,.45); } 50% { box-shadow: 0 0 0 7px rgba(163,149,214,0); } }
+  .music-start.on .note { animation: none; }
+
+  .music-toggle {
+    position: fixed;
+    right: 16px; bottom: calc(16px + env(safe-area-inset-bottom));
+    z-index: 15;
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) padding-box,
+      var(--both) border-box;
+    box-shadow: 0 10px 24px -12px rgba(59,50,64,.5);
+    display: none;
+    align-items: flex-end; justify-content: center; gap: 3px;
+    padding: 0 0 15px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .music-toggle.show { display: flex; }
+  .music-toggle i {
+    display: block; width: 4px; height: 8px; border-radius: 2px;
+    background: var(--both);
+  }
+  .music-toggle.playing i { animation: eq 1s ease-in-out infinite; }
+  .music-toggle.playing i:nth-child(2) { animation-delay: -.3s; }
+  .music-toggle.playing i:nth-child(3) { animation-delay: -.6s; }
+  .music-toggle.playing i:nth-child(4) { animation-delay: -.15s; }
+  @keyframes eq { 0%,100% { height: 6px; } 50% { height: 20px; } }
+  .music-toggle:not(.playing)::after {
+    content: ""; position: absolute; left: 12px; right: 12px; top: 50%;
+    height: 2px; background: var(--muted); transform: rotate(-35deg);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 28px; left: 50%;
+    transform: translateX(-50%);
+    color: var(--muted);
+    font-size: 14px;
+    letter-spacing: .08em;
+    text-decoration: none;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+  }
+  .scroll-hint::after {
+    content: "";
+    width: 1px; height: 36px;
+    background: linear-gradient(var(--muted), transparent);
+    animation: drip 2.2s ease-in-out infinite;
+  }
+  @keyframes drip { 0%,100% { opacity: .3; transform: scaleY(.6); transform-origin: top; } 50% { opacity: 1; transform: scaleY(1); } }
+
+  /* ---------- Letter ---------- */
+  .letter { padding-top: 72px; padding-bottom: 40px; }
+  .polaroid {
+    background: #fff;
+    padding: 14px 14px 18px;
+    box-shadow: 0 18px 40px -18px rgba(59,50,64,.35), 0 2px 6px rgba(59,50,64,.08);
+    width: min(380px, 100%);
+    margin: 0 auto 48px;
+    transform: rotate(-2deg);
+    border-radius: 4px;
+    animation: sway 9s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { transform: rotate(-2deg) translateY(0); }
+    50% { transform: rotate(-.8deg) translateY(-6px); }
+  }
+  .polaroid .frame {
+    aspect-ratio: 708 / 990;
+    background: linear-gradient(135deg, var(--sveta-soft), var(--tanya-soft));
+    position: relative;
+  }
+  .polaroid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .polaroid figcaption {
+    font-family: var(--hand);
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+    color: var(--muted);
+  }
+
+  .greeting {
+    font-family: var(--hand);
+    font-weight: 700;
+    font-size: clamp(40px, 7vw, 56px);
+    line-height: 1.1;
+    margin: 0 0 18px;
+    display: inline-block;
+  }
+  .letter .lead { font-size: 19px; }
+  .letter .closing {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.4;
+    margin-top: 32px;
+    text-align: center;
+  }
+  .faces {
+    width: min(600px, 100%);
+    margin: 36px auto 0;
+    border-radius: 6px;
+    box-shadow: 0 18px 40px -20px rgba(59,50,64,.45);
+  }
+  .faces img { width: 100%; display: block; }
+
+  /* ---------- Legend ---------- */
+  .legend { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 56px 0 48px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px 6px 12px;
+    border-radius: 999px;
+    font-family: var(--hand);
+    font-size: 24px;
+    line-height: 1.2;
+  }
+  .chip::before { content: ""; width: 12px; height: 12px; border-radius: 50%; }
+  .chip.sveta { background: var(--sveta-soft); color: var(--sveta-ink); border: 1px solid var(--sveta-line); }
+  .chip.sveta::before { background: var(--sveta); }
+  .chip.tanya { background: var(--tanya-soft); color: var(--tanya-ink); border: 1px solid var(--tanya-line); }
+  .chip.tanya::before { background: var(--tanya); }
+  .chip.both {
+    border: 1px solid transparent;
+    background: linear-gradient(120deg, var(--sveta-soft), var(--tanya-soft)) padding-box, var(--both) border-box;
+  }
+  .chip.both::before { background: var(--both); }
+  .chip.both span { background: var(--both-ink); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* ---------- Stories timeline ---------- */
+  .stories {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 8px 0 24px;
+  }
+  .stories::before {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(var(--sveta-line), var(--tanya-line), var(--sveta-line), var(--tanya-line));
+    border-radius: 2px;
+  }
+  .story {
+    position: relative;
+    width: calc(50% - 44px);
+    padding: 26px var(--card-px) var(--card-pb);
+    border-radius: 22px;
+    border: 1px solid;
+    box-shadow: 0 14px 30px -22px rgba(59,50,64,.4);
+  }
+  .story::after {
+    content: "";
+    position: absolute;
+    top: 34px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    box-sizing: content-box;
+  }
+  .story.sveta { align-self: flex-start; background: linear-gradient(160deg, #fff 0%, var(--sveta-soft) 100%); border-color: var(--sveta-line); }
+  .story.sveta::after { right: -54px; background: var(--sveta); }
+  .story.tanya { align-self: flex-end; background: linear-gradient(200deg, #fff 0%, var(--tanya-soft) 100%); border-color: var(--tanya-line); }
+  .story.tanya::after { left: -54px; background: var(--tanya); }
+  .story.both {
+    align-self: center;
+    width: min(640px, 72%);
+    z-index: 1;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(170deg, #fff 0%, var(--sveta-soft) 55%, var(--tanya-soft) 100%) padding-box,
+      var(--both) border-box;
+  }
+  .story.both::after { display: none; }
+
+  .who { font-family: var(--hand); font-weight: 700; font-size: 26px; line-height: 1; margin-bottom: 6px; }
+  .sveta .who { color: var(--sveta-ink); }
+  .tanya .who { color: var(--tanya-ink); }
+  .both .who { display: inline-block; background: var(--both-ink); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .story h3 { font-family: var(--serif); font-weight: 600; font-size: 27px; line-height: 1.2; margin: 0 0 14px; }
+  .story p { font-size: 17px; }
+  .quote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 23px !important;
+    line-height: 1.35;
+    padding-left: 14px;
+    border-left: 3px solid var(--sveta);
+  }
+  .punch { font-style: italic; color: var(--muted); }
+
+  /* ---------- Tiles (photos + videos) ---------- */
+  .tiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    overflow: hidden;
+  }
+  .story .tiles {
+    margin: 22px calc(-1 * var(--card-px)) calc(-1 * var(--card-pb));
+    border-radius: 0 0 21px 21px;
+  }
+  .story.both .tiles { border-radius: 0 0 20px 20px; }
+  .voice .tiles { margin: 26px calc(-1 * var(--voice-px)); }
+  .voice .tiles.end { margin-bottom: -40px; }
+  @media (max-width: 760px) { .voice .tiles.end { margin-bottom: -28px; } }
+  .tiles.solo { border-radius: 18px; margin: 14px 0 0; box-shadow: 0 16px 34px -22px rgba(59,50,64,.6); }
+
+  .tile {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0; padding: 0; border: 0;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: #2d2731;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tile.wide { grid-column: 1 / -1; aspect-ratio: var(--ar, 4 / 3); }
+  .tile.tall { aspect-ratio: 3 / 4; }
+  .tile img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; transition: transform .8s ease; }
+  @media (hover: hover) { .tile:hover img { transform: scale(1.04); } }
+  .tile.vid::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(transparent 55%, rgba(20,14,24,.45));
+    pointer-events: none;
+  }
+  .tile .play {
+    position: absolute; left: 50%; top: 50%;
+    width: 72px; height: 72px;
+    margin: -36px 0 0 -36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.88);
+    box-shadow: 0 10px 30px -8px rgba(0,0,0,.45);
+    z-index: 1;
+    transition: transform .25s;
+  }
+  .tile .play::before {
+    content: "";
+    position: absolute; left: 29px; top: 23px;
+    border-left: 20px solid var(--tanya-ink);
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+  }
+  .sveta .tile .play::before { border-left-color: var(--sveta-ink); }
+  .tile:active .play { transform: scale(.92); }
+  .tile .dur {
+    position: absolute; right: 12px; bottom: 10px;
+    z-index: 1;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: .03em;
+    text-shadow: 0 1px 6px rgba(0,0,0,.5);
+  }
+
+  .ambient {
+    margin: 26px calc(-1 * var(--voice-px));
+    aspect-ratio: 9 / 16;
+    max-height: 760px;
+    overflow: hidden;
+    background: #e9e6e8;
+  }
+  .ambient video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .interlude { align-self: center; width: min(640px, 100%); position: relative; z-index: 1; text-align: center; padding: 8px 0; }
+  .interlude .caption {
+    font-family: var(--hand);
+    font-size: 28px;
+    line-height: 1.15;
+    color: var(--muted);
+    background: var(--bg);
+    display: inline-block;
+    padding: 0 14px 4px;
+  }
+
+  /* ---------- Voices (finale) ---------- */
+  .voices { padding-top: 72px; padding-bottom: 24px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 760px; }
+  .voice { border-radius: 28px; padding: 40px var(--voice-px); border: 1px solid; overflow: hidden; }
+  .voice .who { font-size: 32px; margin-bottom: 18px; }
+  .voice.sveta { background: var(--sveta-soft); border-color: var(--sveta-line); }
+  .voice.both {
+    border: 2px solid transparent;
+    background:
+      linear-gradient(120deg, var(--sveta-soft), var(--tanya-soft)) padding-box,
+      var(--both) border-box;
+  }
+  .voice .accent { font-family: var(--serif); font-style: italic; font-size: 26px; line-height: 1.35; }
+
+  /* ---------- Final ---------- */
+  .final { text-align: center; padding-top: 80px; padding-bottom: 40px; }
+  .final h2 {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: clamp(46px, 9vw, 92px);
+    line-height: 1.05;
+    margin: 0 0 16px;
+    padding: 0 .06em .08em;
+  }
+  .final .sign { font-family: var(--hand); font-size: 36px; color: var(--ink); }
+
+  .gallery { columns: 3 220px; column-gap: 14px; margin: 40px auto 0; max-width: 920px; text-align: left; }
+  .gallery .tile {
+    aspect-ratio: auto;
+    margin: 0 0 14px;
+    border-radius: 14px;
+    break-inside: avoid;
+    background: transparent;
+    box-shadow: 0 12px 26px -18px rgba(59,50,64,.55);
+  }
+  .gallery .tile img { height: auto; }
+
+  .birthday { text-align: center; padding-top: 48px; padding-bottom: 120px; }
+  .birthday p { font-size: 19px; }
+  .date {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 600;
+    font-size: clamp(48px, 12vw, 96px);
+    letter-spacing: .02em;
+    line-height: 1.1;
+    margin: 16px 0 24px;
+  }
+
+  /* ---------- Gift ---------- */
+  .gift-stage { position: relative; height: 300px; margin-top: 40px; display: grid; place-items: center; }
+  .gift {
+    position: relative;
+    width: 170px; height: 170px;
+    border: 0; padding: 0;
+    background: none;
+    cursor: pointer;
+    animation: wiggle 3.2s ease-in-out infinite;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .gift:focus-visible { outline: 3px solid var(--tanya); outline-offset: 12px; border-radius: 12px; }
+  .gift .box {
+    position: absolute;
+    left: 10px; right: 10px; bottom: 0;
+    height: 112px;
+    background: linear-gradient(160deg, #e9a5b8, var(--sveta));
+    border-radius: 6px 6px 12px 12px;
+    box-shadow: inset 0 -10px 0 rgba(0,0,0,.05), 0 18px 30px -16px rgba(168,79,106,.6);
+  }
+  .gift .box::before {
+    content: "";
+    position: absolute; top: 0; bottom: 0; left: 50%;
+    width: 26px; transform: translateX(-50%);
+    background: var(--tanya);
+  }
+  .gift .lid {
+    position: absolute;
+    left: 0; right: 0; bottom: 108px;
+    height: 38px;
+    background: linear-gradient(160deg, #f0b6c6, #e19aae);
+    border-radius: 8px;
+    transition: transform .9s cubic-bezier(.2,.9,.3,1.2), opacity .9s ease;
+    box-shadow: 0 6px 10px -6px rgba(168,79,106,.5);
+  }
+  .gift .lid::before {
+    content: "";
+    position: absolute; top: 0; bottom: 0; left: 50%;
+    width: 28px; transform: translateX(-50%);
+    background: var(--tanya);
+  }
+  .gift .bow { position: absolute; left: 50%; bottom: 100%; width: 0; height: 0; }
+  .gift .bow::before, .gift .bow::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    width: 46px; height: 34px;
+    border: 9px solid var(--tanya);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  }
+  .gift .bow::before { right: 0; transform: rotate(-28deg); transform-origin: right bottom; }
+  .gift .bow::after { left: 0; transform: rotate(28deg); transform-origin: left bottom; }
+  @keyframes wiggle {
+    0%, 70%, 100% { transform: rotate(0); }
+    74% { transform: rotate(-5deg); }
+    78% { transform: rotate(5deg); }
+    82% { transform: rotate(-4deg); }
+    86% { transform: rotate(3deg); }
+    90% { transform: rotate(0); }
+  }
+  .gift-hint { font-family: var(--hand); font-size: 30px; color: var(--sveta-ink); margin-top: 18px !important; transition: opacity .4s; }
+  .opened .gift { animation: none; cursor: default; }
+  .opened .gift .lid { transform: translate(-30px, -150px) rotate(-28deg); opacity: 0; }
+  .opened .gift .box { transition: transform .6s ease .3s, opacity .6s ease .3s; transform: translateY(30px) scale(.85); opacity: 0; }
+  .opened .gift-hint { opacity: 0; }
+  .gift-message {
+    position: absolute;
+    left: 50%; top: 50%;
+    width: min(560px, calc(100vw - 32px));
+    transform: translate(-50%, -40%) scale(.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .8s ease .5s, transform .8s cubic-bezier(.2,.9,.3,1.2) .5s;
+    border-radius: 26px;
+    padding: 36px 32px;
+    border: 2px solid transparent;
+    background:
+      linear-gradient(var(--paper), var(--paper)) padding-box,
+      var(--both) border-box;
+    box-shadow: 0 30px 60px -30px rgba(59,50,64,.5);
+  }
+  .opened .gift-message { opacity: 1; transform: translate(-50%, -50%) scale(1); pointer-events: auto; }
+  .gift-message .big { font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 5vw, 34px); line-height: 1.3; margin: 0 0 16px; }
+  .gift-message .sign { font-family: var(--hand); font-size: 32px; }
+  .gift-message .sign .s { color: var(--sveta-ink); }
+  .gift-message .sign .t { color: var(--tanya-ink); }
+  .heart { position: fixed; pointer-events: none; font-size: 22px; z-index: 10; will-change: transform, opacity; }
+
+  footer { text-align: center; color: var(--muted); font-family: var(--hand); font-size: 22px; padding: 0 16px 90px; }
+
+  /* ---------- Lightbox & player ---------- */
+  .overlay {
+    position: fixed; inset: 0;
+    z-index: 30;
+    background: rgba(24,18,28,.96);
+    display: none;
+    align-items: center; justify-content: center;
+    touch-action: pan-y;
+  }
+  .overlay.open { display: flex; }
+  .overlay img, .overlay video {
+    max-width: 100vw;
+    max-height: 100svh;
+    display: block;
+  }
+  .overlay img { max-width: calc(100vw - 24px); max-height: calc(100svh - 120px); border-radius: 8px; user-select: none; -webkit-user-drag: none; }
+  .overlay video { width: 100vw; height: 100svh; object-fit: contain; background: #000; }
+  .ov-btn {
+    position: absolute;
+    z-index: 2;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    font-size: 28px;
+    line-height: 1;
+    display: grid; place-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .ov-close { top: calc(14px + env(safe-area-inset-top)); right: 14px; }
+  .ov-prev { left: 12px; top: 50%; margin-top: -24px; }
+  .ov-next { right: 12px; top: 50%; margin-top: -24px; }
+  .ov-count {
+    position: absolute; bottom: calc(22px + env(safe-area-inset-bottom)); left: 0; right: 0;
+    text-align: center; color: rgba(255,255,255,.7); font-size: 14px; letter-spacing: .06em;
+  }
+  .player .ov-close { top: calc(70px + env(safe-area-inset-top)); }
+
+  /* ---------- Living photos ---------- */
+  .alive { position: relative; overflow: hidden; }
+  .alive img { animation: breathe 20s ease-in-out infinite; transform-origin: 50% 35%; will-change: transform; }
+  .alive.o2 img { animation-duration: 24s; animation-delay: -6s; transform-origin: 30% 50%; }
+  .alive.o3 img { animation-duration: 22s; animation-delay: -12s; transform-origin: 70% 40%; }
+  @keyframes breathe {
+    0%, 100% { transform: scale(1.02) translate(0, 0); }
+    50% { transform: scale(1.1) translate(-1.5%, -1%); }
+  }
+  .alive.glow::before {
+    content: "";
+    position: absolute; inset: -30%;
+    z-index: 1;
+    background: linear-gradient(115deg, transparent 42%, rgba(255,236,214,.35) 50%, transparent 58%);
+    transform: translateX(-70%);
+    animation: sweep 11s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes sweep {
+    0%, 55% { transform: translateX(-70%); }
+    85%, 100% { transform: translateX(70%); }
+  }
+
+  /* ---------- Reveal on scroll ---------- */
+  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .polaroid.reveal { transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .reveal { transform: none; transition: opacity .4s; }
+    .gift, .scroll-hint::after, .music-start .note { animation: none; }
+    .alive img, .alive.glow::before, .polaroid { animation: none; }
+    .polaroid { transform: rotate(-2deg); }
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 760px) {
+    :root { --card-px: 20px; --card-pb: 24px; --voice-px: 22px; }
+    body { font-size: 17px; }
+    .stories { gap: 22px; }
+    .stories::before { left: 10px; transform: none; }
+    .story, .story.both {
+      width: auto;
+      align-self: stretch;
+      margin-left: 30px;
+      padding-top: 22px;
+    }
+    .story.sveta::after, .story.tanya::after, .story.both::after {
+      display: block;
+      left: -28px; right: auto; top: 30px; width: 10px; height: 10px;
+    }
+    .story.both::after { background: var(--both); }
+    .interlude { width: auto; align-self: stretch; margin-left: 30px; }
+    .story h3 { font-size: 24px; }
+    .voice { padding: 28px var(--voice-px); border-radius: 22px; }
+    .polaroid { width: min(300px, 88%); }
+    .gift-stage { height: 340px; }
+    .gift-message { padding: 28px 22px; }
+    .gallery { columns: 2; column-gap: 10px; }
+    .gallery .tile { margin-bottom: 10px; border-radius: 10px; }
+    .tile .play { width: 62px; height: 62px; margin: -31px 0 0 -31px; }
+    .tile .play::before { left: 25px; top: 19px; border-left-width: 18px; border-top-width: 12px; border-bottom-width: 12px; }
+    .ov-prev, .ov-next { display: none; }
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">29 ноября</div>
+    <h1 class="grad-text">С Днём<br>матери,</h1>
+    <div class="mamulya">мамуля</div>
+    <div class="ornament" aria-hidden="true"><span></span>♡<span></span></div>
+    <div class="subtitle">истории о тебе</div>
+    <div class="from"><span class="t">от Тани</span><span class="amp">и</span><span class="s">Светы</span></div>
+    <div>
+      <button class="music-start" id="musicStart" type="button">
+        <span class="note">♪</span><span class="label">включить музыку</span>
+      </button>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#letter">листай вниз</a>
+</header>
+
+<button class="music-toggle" id="musicToggle" type="button" aria-label="Музыка: пауза или продолжить"><i></i><i></i><i></i><i></i></button>
+
+<main>
+  <section class="letter wrap" id="letter">
+    <figure class="polaroid reveal" id="photo">
+      <div class="frame alive glow">
+        <img src="media/parents.jpg" alt="Мама и папа: маме 25, папе 28">
+      </div>
+      <figcaption>маме 25, папе 28</figcaption>
+    </figure>
+
+    <div class="narrow">
+      <div class="greeting grad-text reveal">Любимая мамуля,</div>
+      <p class="lead reveal">на этой фотографии тебе 25, а папе — 28. Сейчас Свете столько же, сколько тебе тогда, а Тане — столько же, сколько папе.</p>
+      <p class="reveal">В 25 ты стала мамой Тани. Через три года родилась Света. И вот мы смотрим на эту фотографию и думаем, сколько всего мы с тех пор прожили вместе. Сейчас, когда мы сами в том возрасте, даже представить сложно, сколько сил ты вложила в то, чтобы вырастить нас двоих.</p>
+      <p class="reveal">У тебя наверняка совсем свои воспоминания о тех годах. Многое мы просто не могли заметить, пока сами были детьми. А кое-что мы до сих пор помним так хорошо, будто это было вчера. Когда вспоминаем такие вещи, снова чувствуем, сколько любви ты нам давала. И словами трудно передать, как мы тебе за это благодарны.</p>
+      <p class="closing reveal">Когда мы начали вспоминать эти моменты один за другим, мы поняли, как много в каждой из нас от тебя.</p>
+      <div class="faces alive glow o2 reveal"><img src="media/faces-three.jpg" alt="Мама, Таня и Света" loading="lazy"></div>
+    </div>
+
+    <div class="legend reveal" aria-label="Кто рассказывает">
+      <span class="chip tanya">Таня</span>
+      <span class="chip sveta">Света</span>
+      <span class="chip both"><span>вместе</span></span>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="stories">
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Летний учебник в начальной школе</h3>
+        <p>Каждую ночь я лежала и не могла уснуть. У меня был ритуал — прийти к тебе, рассказать о том, как я переживаю, и поплакать. Мне было так тревожно из-за учебника, который нам в начальной школе задали делать летом. Я приходила к тебе и только после этого могла заснуть. Ты ни разу меня не прогнала и не ругалась, что я опять пришла.</p>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Субботние завтраки</h3>
+        <p>По субботам ты жарила нам блины или оладушки. В детстве мне казалось, что это обычный субботний завтрак. А сейчас мне и для себя-то бывает сложно нажарить блинов, и я думаю, как ты с двумя детьми умудрялась делать это каждую субботу.</p>
+        <p>И сейчас каждый раз, когда мы приезжаем домой, мы снова едим твои оладушки или блинчики.</p>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Звонки на работу</h3>
+        <p class="quote">«Здравствуйте, позовите Елену Викторовну, пожалуйста».</p>
+        <p>Так я говорила каждый раз, когда звонила тебе на работу. Я звонила тебе ещё в начальной школе, а потом и в средней. И каждый раз мне было так тепло слышать твой голос.</p>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Каша в любое время</h3>
+        <p>Когда мы были голодные, ты всегда варила нам кашу. Даже если мы возвращались с какой-нибудь невероятной тусовки в двенадцать ночи. Бабушка тоже удивлялась, как часто ты нам её готовишь.</p>
+        <p>Тогда мы особо этого не замечали. Ну захотели есть, ну мама сварила кашу. А сейчас я понимаю, что ты ведь и сама могла устать и хотеть спать, а всё равно шла на кухню, чтобы мы не остались голодными.</p>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Когда я ушла с танцев</h3>
+        <p>Мы заказали два крутых костюма для танцев. Их шили специально для меня, и мы потратили на них кучу денег. Я к тому моменту занималась уже три года. А после одного соревнования поняла, что танцы мне больше не нравятся и я хочу уйти.</p>
+        <p>Когда я тебе об этом сказала, ты так сильно меня поддержала. Ты ни слова не сказала про то, сколько мы потратили на костюмы. Ты просто была на моей стороне.</p>
+        <p>Это, наверное, одно из самых важных моих воспоминаний. Я до сих пор плачу каждый раз, когда об этом вспоминаю. Мам, я так тебе за это благодарна.</p>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Английские слова</h3>
+        <p>В школе я учила английские слова в том порядке, в котором выписала их на бумажку. Потом попросила тебя меня проверить, а ты начала спрашивать вразнобой. Я возмутилась — «Мам, ну я же в другом порядке учила!»</p>
+        <p>Ты тогда объяснила мне, что в жизни слова в том же порядке, что на моей бумажке, не попадутся. Вот так я и поняла, как их вообще надо учить.</p>
+      </article>
+
+      <article class="story both reveal">
+        <div class="who">Таня и Света</div>
+        <h3>Наши мегаконцерты</h3>
+        <p>Мы весь вечер придумывали всякие номера, а потом вы поднимались к нам на второй этаж смотреть концерт. Вы смотрели все наши номера, снимали нас на камеру и хлопали.</p>
+        <p>А когда уже собирались уходить, обязательно пили «напосошок». И так раз тысячу. А мы каждый раз получали ещё немного времени потусить.</p>
+        <div class="tiles">
+          <button class="tile wide vid" data-video="media/concert-models.mp4" type="button" aria-label="Видео"><img src="media/concert-models.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">4:40</span></button>
+          <button class="tile vid" data-video="media/concert-balloons.mp4" type="button" aria-label="Видео"><img src="media/concert-balloons.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">0:29</span></button>
+          <button class="tile vid" data-video="media/concert-stairs.mp4" type="button" aria-label="Видео"><img src="media/concert-stairs.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">2:08</span></button>
+          <button class="tile wide vid" data-video="media/concert-newyear.mp4" type="button" aria-label="Видео"><img src="media/concert-newyear.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">3:25</span></button>
+        </div>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Конфеты над холодильником</h3>
+        <p>Однажды я нашла коробку конфет в узкой щели над холодильником. Ты прятала от меня конфеты везде-везде, а я умудрялась находить их даже там. И ты меня за это ни разу не ругала.</p>
+      </article>
+
+      <div class="interlude reveal">
+        <span class="caption">а ещё мы были вот такие</span>
+        <div class="tiles solo">
+          <button class="tile wide" style="--ar: 4 / 3" data-full type="button"><img src="media/kid-moscow.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/kid-fountain.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/kid-balloons.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/kid-grass.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/night-family.jpg" alt="" loading="lazy"></button>
+        </div>
+      </div>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Скоро на море</h3>
+        <p>Перед поездкой в Турцию мы с тобой пошли за покупками. Ты вдруг так обрадовалась, что скоро увидишь море. Сказала что-то вроде «Я даже не верю, что мы скоро полетим!»</p>
+        <p>Я до сих пор помню, какая ты тогда была счастливая. Удивительно, но и сейчас, когда я думаю о море, первой вспоминаю тебя.</p>
+        <div class="tiles">
+          <button class="tile wide" data-full type="button"><img src="media/side.jpg" alt="" loading="lazy"></button>
+          <button class="tile wide vid" style="--ar: 16 / 9" data-video="media/turkey.mp4" type="button" aria-label="Видео"><img src="media/turkey.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">0:41</span></button>
+        </div>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Когда я иду к морю</h3>
+        <p>Я каждый раз думаю о тебе, когда иду к морю. Ты его так любишь, что мне иногда кажется, будто от тебя мне передалось и это чувство, что без моря мне чего-то не хватает.</p>
+        <div class="tiles">
+          <button class="tile wide" style="--ar: 4 / 5" data-full type="button"><img src="media/sea-swim.jpg" alt="" loading="lazy"></button>
+          <button class="tile vid" data-video="media/sea-night.mp4" type="button" aria-label="Видео"><img src="media/sea-night.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">0:53</span></button>
+          <button class="tile" data-full type="button"><img src="media/sea-deadsea.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/sea-beach.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/sea-evening.jpg" alt="" loading="lazy"></button>
+        </div>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Подарки от Деда Мороза</h3>
+        <p>Каждый Новый год после курсантов мы шли домой, а там форточка открыта и лежат конфеты. Мы были уверены, что, пока нас не было, к нам заглянул Дед Мороз.</p>
+        <p>И каждый год у нас правда было это чувство, будто дома случилось что-то волшебное. Теперь я понимаю, что эту сказку для нас устраивала ты.</p>
+        <div class="tiles">
+          <button class="tile vid" data-video="media/newyear-sparkler.mp4" type="button" aria-label="Видео"><img src="media/newyear-sparkler.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">0:31</span></button>
+          <button class="tile vid" data-video="media/tubing.mp4" type="button" aria-label="Видео"><img src="media/tubing.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">0:38</span></button>
+        </div>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Как мы подрабатывали</h3>
+        <p>Мы со Светой красили заборы у тебя на работе. Мне было так необычно работать там же, где и ты. А когда нам заплатили, я так обрадовалась. Тогда эта сумма казалась нам очень большой.</p>
+        <p>Мы подрабатывали и у тебя, и у папы. Мне очень ценно, что вы давали нам такую возможность. Благодаря этому мы знаем, что всегда сможем сами заработать и себя обеспечить.</p>
+        <p>И ещё я думаю о квартирах, которые нам достались. Как бы ни сложилась жизнь, у каждой из нас есть место, куда можно вернуться. От этого спокойнее.</p>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Пиджак из Lime</h3>
+        <p>В девятом или десятом классе мы с тобой зашли в Lime, и мне там ужасно понравился один пиджак. В тот день мы не смогли его купить, и я расстроилась.</p>
+        <p>А потом ты принесла его домой. Тот самый пиджак. Он стоил больших денег, и я совсем не ожидала, что ты всё-таки его купишь.</p>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Тусовка на даче</h3>
+        <p>В десятом классе мы решили устроить тусовку на даче со школьными друзьями. Я до сих пор удивляюсь, что нам тогда разрешили собраться самим. А потом ты приехала за нами, чтобы забрать нас домой. Мне было очень приятно, что ты о нас так позаботилась. Нам дали побыть самим по себе, и при этом я знала, что ты за нами приедешь.</p>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Наши поездки</h3>
+        <p>Когда ты куда-то ездила отдыхать, ты всегда брала нас со Светой с собой. В детстве мне казалось, что быть всегда вместе — это само собой. А сейчас я понимаю, что мало у кого было такое детство, когда на отдых всегда ездили всей семьёй.</p>
+        <div class="tiles">
+          <button class="tile wide" data-full type="button"><img src="media/trip-mud.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/trip-towels.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/trip-waterfall.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/trip-icecream.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/trip-sun.jpg" alt="" loading="lazy"></button>
+          <button class="tile wide" data-full type="button"><img src="media/trip-dance.jpg" alt="" loading="lazy"></button>
+        </div>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Заселение в общежитие</h3>
+        <p>Когда я заселялась в общагу, ты осталась ждать меня на улице. Ты прождала меня там очень долго. Я поняла, что тебе было обидно, но тогда совсем не задумалась о том, каково тебе было.</p>
+        <p>Сейчас я думаю о том, как непросто тебе, наверное, было, когда мы с Таней разъехались по разным городам. Мам, спасибо тебе за то, что ты тогда отпустила нас обеих. И за то, что ты и сейчас даёшь нам самим решать, как мы хотим жить, и всегда нас поддерживаешь.</p>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Камин</h3>
+        <p>С первого курса я мечтала подарить тебе камин. У меня даже в заметках в списке целей так и написано — найти работу, чтобы подарить маме камин. Я очень-очень хотела сама на него заработать. Меня тогда правда двигала мысль о том, что однажды я смогу тебе его купить.</p>
+        <div class="tiles">
+          <button class="tile wide alive glow o3" data-full type="button"><img src="media/fireplace.jpg" alt="" loading="lazy"></button>
+        </div>
+      </article>
+
+      <article class="story both reveal">
+        <div class="who">Таня и Света</div>
+        <h3>Фен для мамы</h3>
+        <p>Наш первый серьёзный подарок тебе стоил, кажется, три тысячи рублей. По тем временам для нас это были большие деньги. Мы купили тебе фен и очень хотели тебя порадовать.</p>
+        <p class="punch">В итоге фен забрала себе Света.</p>
+      </article>
+
+      <article class="story tanya reveal">
+        <div class="who">Таня</div>
+        <h3>Зимние сапоги и билет домой</h3>
+        <p>На первом курсе у меня и так были деньги на месяц, но однажды мне понадобились зимние сапоги, а они стоили дорого. Ты тогда помогла мне их купить. И так бывало много раз. Когда нам со Светой что-то было нужно, ты всегда находила возможность помочь.</p>
+        <p>Даже сейчас, когда мы говорим о том, чтобы я приехала, ты предлагаешь скинуться мне на билет. Я уже могу купить его сама, но мне всё равно очень тепло от твоего предложения. Я слышу в нём, как сильно тебе хочется, чтобы мы увиделись.</p>
+      </article>
+
+      <div class="interlude reveal">
+        <span class="caption">и как же хорошо, когда мы видимся</span>
+        <div class="tiles solo">
+          <button class="tile wide vid" style="--ar: 4 / 5" data-video="media/sunset.mp4" type="button" aria-label="Видео"><img src="media/sunset.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">0:15</span></button>
+          <button class="tile" data-full type="button"><img src="media/meet-bus.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/meet-haifa.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/meet-rink.jpg" alt="" loading="lazy"></button>
+          <button class="tile" data-full type="button"><img src="media/meet-pride.jpg" alt="" loading="lazy"></button>
+        </div>
+      </div>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Когда я встречалась с Даниилом</h3>
+        <p>Когда я встречалась с Даниилом, тебе, наверное, было тяжело видеть, как он иногда со мной обращался. Ты никогда не вмешивалась в наши отношения и не давала советов, если я сама не спрашивала. Ты давала мне самой решать, как быть. Я очень тебе за это благодарна.</p>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Видео в семейном чате</h3>
+        <p>Однажды ты скинула в наш семейный чат видео про то, как мужчины и женщины смотрят на деньги в паре. Я до сих пор его помню. После него я правда стала по-другому относиться к деньгам в отношениях.</p>
+      </article>
+
+      <article class="story sveta reveal">
+        <div class="who">Света</div>
+        <h3>Видео в Кирове</h3>
+        <p>Когда мы с тобой ездили в Киров на операцию на глаза, мы вместе смотрели выпуск «Пси 2.0». Там одна девушка рассказывала о том, как она думает о детях. Мне так запомнилось то, что Филяев сказал ей в ответ, что я записала эту мысль в заметки и до сих пор её помню.</p>
+        <p>После того выпуска я стала увереннее в том, что могу сама решать, чего хочу для себя.</p>
+      </article>
+
+      <div class="interlude reveal">
+        <span class="caption">а это просто ты — наша мама</span>
+        <div class="tiles solo">
+          <button class="tile tall alive" data-full type="button"><img src="media/mom-road.jpg" alt="" loading="lazy"></button>
+          <button class="tile tall alive o2" data-full type="button"><img src="media/mom-nachos.jpg" alt="" loading="lazy"></button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="voices wrap">
+    <div class="voice both reveal">
+      <div class="who grad-text">Таня и Света</div>
+      <p>Мам, прежде чем мы скажем тебе кое-что от нас сегодняшних, давай на минутку вернёмся к нам маленьким.</p>
+      <div class="tiles">
+        <button class="tile wide vid" data-video="media/congrats.mp4" type="button" aria-label="Видео: мы маленькие поздравляем тебя"><img src="media/congrats.jpg" alt=""><span class="play"></span><span class="dur">1:11</span></button>
+      </div>
+      <p>В детстве нам казалось, что у всех так. Что к маме можно прийти с чем угодно и она выслушает. Сейчас мы понимаем, сколько ты для нас делала и как нам повезло, что мы до сих пор можем рассказать тебе обо всём. Мало у кого с мамой такие тёплые отношения, как у нас с тобой. И нам очень дорого, что мы друг с другом тоже выросли такими близкими.</p>
+      <p>Мы очень любим наши созвоны. Ты всегда внимательно слушаешь, даже когда мы просто рассказываем, как прошёл день. А когда нам трудно, ты умеешь поддержать и не спешишь советовать, как нам поступить. С тобой можно сказать всё как есть.</p>
+      <p>Куда бы мы ни разъехались и что бы ни случилось, у нас всегда есть Сыктывкар. Там, рядом с тобой, мы чувствуем себя в безопасности.</p>
+      <div class="tiles">
+        <button class="tile wide vid" style="--ar: 4 / 5" data-video="media/family-studio.mp4" type="button" aria-label="Видео"><img src="media/family-studio.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">1:09</span></button>
+      </div>
+      <p class="accent">А ещё ты безумно красивая.</p>
+      <div class="ambient"><video src="media/mom-studio.mp4" poster="media/mom-studio.jpg" muted loop autoplay playsinline preload="metadata"></video></div>
+    </div>
+
+    <div class="voice sveta reveal">
+      <div class="who">Света</div>
+      <p>Максим как-то сказал, что о девушке многое можно понять, если посмотреть на её маму. Ну, мы с ним всё ещё вместе, ахах.</p>
+      <p>А если выбирать между поездкой куда угодно с друзьями и временем с тобой в Сыктывкаре, я всегда выберу тебя. Мне очень важно, что мы с тобой так близки. И я очень люблю, когда можем побыть вдвоём, просто ты и я.</p>
+      <div class="tiles">
+        <button class="tile wide vid" style="--ar: 16 / 9" data-video="media/sofa.mp4" type="button" aria-label="Видео"><img src="media/sofa.jpg" alt="" loading="lazy"><span class="play"></span><span class="dur">1:02</span></button>
+      </div>
+    </div>
+
+    <div class="voice both reveal">
+      <div class="who grad-text">Таня и Света</div>
+      <p>Мам, ты тоже всегда можешь на нас рассчитывать. В любой момент можешь позвонить нам, если нужна помощь с деньгами или если хочется, чтобы тебя просто выслушали и поддержали.</p>
+      <p class="accent">Мамуля, нам всегда-всегда хочется с тобой общаться, знать, как у тебя дела, и видеться при любой возможности. Спасибо, что с тобой нам так уютно. Мы тебе очень доверяем и очень тебя любим.</p>
+      <div class="tiles end">
+        <button class="tile wide" style="--ar: 4 / 5" data-full type="button"><img src="media/three-selfie.jpg" alt="" loading="lazy"></button>
+        <button class="tile" data-full type="button"><img src="media/selfie-pond.jpg" alt="" loading="lazy"></button>
+        <button class="tile" data-full type="button"><img src="media/selfie-glasses.jpg" alt="" loading="lazy"></button>
+        <button class="tile" data-full type="button"><img src="media/selfie-view.jpg" alt="" loading="lazy"></button>
+        <button class="tile" data-full type="button"><img src="media/selfie-winter.jpg" alt="" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="final wrap reveal">
+    <h2 class="grad-text">С Днём матери, мамуля!</h2>
+    <div class="sign">Твои Таня и Света ❤️</div>
+    <div class="tiles solo" style="max-width: 920px; margin: 40px auto 0; grid-template-columns: 1fr">
+      <button class="tile wide alive glow o2" style="--ar: 3 / 2" data-full type="button"><img src="media/three-wedding.jpg" alt="" loading="lazy"></button>
+    </div>
+    <div class="gallery" style="margin-top: 14px">
+      <button class="tile alive" data-full type="button"><img src="media/jackets-3.jpg" alt="" loading="lazy"></button>
+      <button class="tile alive o2" data-full type="button"><img src="media/white-1.jpg" alt="" loading="lazy"></button>
+      <button class="tile alive o3" data-full type="button"><img src="media/jackets-1.jpg" alt="" loading="lazy"></button>
+      <button class="tile alive o2" data-full type="button"><img src="media/white-3.jpg" alt="" loading="lazy"></button>
+      <button class="tile alive" data-full type="button"><img src="media/white-2.jpg" alt="" loading="lazy"></button>
+    </div>
+  </section>
+
+  <section class="birthday wrap">
+    <div class="narrow">
+      <p class="reveal">У тебя в этот раз такая красивая дата дня рождения —</p>
+      <span class="date grad-text reveal">27.01.2027</span>
+      <p class="reveal">В такой день мы просто должны быть вместе. Поэтому у нас для тебя есть ещё кое-что…</p>
+    </div>
+
+    <div class="gift-stage reveal" id="giftStage">
+      <div>
+        <button class="gift" id="gift" type="button" aria-label="Открыть подарочек">
+          <span class="box"></span>
+          <span class="lid"><span class="bow"></span></span>
+        </button>
+        <p class="gift-hint">Кликни на подарочек</p>
+      </div>
+      <div class="gift-message" id="giftMessage" aria-live="polite">
+        <p class="big">Мы обе приедем в Сыктывкар, чтобы вместе отпраздновать твой день рождения! ❤️</p>
+        <div class="sign"><span class="t">Таня</span> и <span class="s">Света</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>💗 💜</footer>
+
+<div class="overlay lightbox" id="lightbox" role="dialog" aria-label="Фото">
+  <button class="ov-btn ov-close" type="button" aria-label="Закрыть">×</button>
+  <button class="ov-btn ov-prev" type="button" aria-label="Предыдущее">‹</button>
+  <img alt="">
+  <button class="ov-btn ov-next" type="button" aria-label="Следующее">›</button>
+  <div class="ov-count"></div>
+</div>
+
+<div class="overlay player" id="player" role="dialog" aria-label="Видео">
+  <button class="ov-btn ov-close" type="button" aria-label="Закрыть">×</button>
+  <video controls playsinline></video>
+</div>
+
+<script>
+/* ================= Music ================= */
+var Music = (function () {
+  var FILE = 'media/music.mp3';
+  var hasFile = false;
+  try {
+    fetch(FILE, { method: 'HEAD' }).then(function (r) { hasFile = r.ok; }).catch(function () {});
+  } catch (e) {}
+
+  var audio = null;           // file mode
+  var ctx, master, bus, timer, nextTime = 0, step = 0;  // generative mode
+  var playing = false, ducked = false, started = false;
+
+  var BPM = 66, EIGHTH = 60 / BPM / 2;
+  // F major: Fmaj7 – Dm7 – Bbmaj7 – Cadd9
+  var CHORDS = [[53, 57, 60, 64], [50, 53, 57, 60], [46, 50, 53, 57], [48, 52, 55, 62]];
+  var ARP = [0, 1, 2, 3, 2, 1, 2, 3];
+  var MELODY = [
+    [[0, 81], [3, 79], [4, 77], [6, 72]],
+    [[0, 74], [2, 77], [4, 81], [7, 79]],
+    [[0, 77], [3, 74], [4, 72], [6, 70]],
+    [[0, 72], [2, 74], [4, 76], [6, 79]],
+    [[0, 81], [2, 84], [4, 81], [6, 77]],
+    [[0, 74], [3, 77], [4, 76], [6, 74]],
+    [[0, 70], [2, 74], [4, 77], [6, 81]],
+    [[0, 79], [4, 76], [6, 72]]
+  ];
+  function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+
+  function setup() {
+    var AC = window.AudioContext || window.webkitAudioContext;
+    ctx = new AC();
+    master = ctx.createGain(); master.gain.value = 0;
+    var comp = ctx.createDynamicsCompressor();
+    master.connect(comp); comp.connect(ctx.destination);
+
+    bus = ctx.createGain();
+    var dry = ctx.createGain(); dry.gain.value = .75;
+    bus.connect(dry); dry.connect(master);
+
+    // reverb
+    var len = ctx.sampleRate * 3.2, imp = ctx.createBuffer(2, len, ctx.sampleRate);
+    for (var c = 0; c < 2; c++) {
+      var d = imp.getChannelData(c);
+      for (var i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / len, 2.8);
+    }
+    var verb = ctx.createConvolver(); verb.buffer = imp;
+    var wet = ctx.createGain(); wet.gain.value = .55;
+    bus.connect(verb); verb.connect(wet); wet.connect(master);
+
+    // soft echo
+    var delay = ctx.createDelay(1); delay.delayTime.value = EIGHTH * 3;
+    var fb = ctx.createGain(); fb.gain.value = .28;
+    var dwet = ctx.createGain(); dwet.gain.value = .18;
+    bus.connect(delay); delay.connect(fb); fb.connect(delay); delay.connect(dwet); dwet.connect(verb);
+  }
+
+  function pluck(t, m, vel, dur) {
+    var f = hz(m);
+    var g = ctx.createGain();
+    var lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 2600;
+    var o1 = ctx.createOscillator(); o1.type = 'triangle'; o1.frequency.value = f;
+    var o2 = ctx.createOscillator(); o2.type = 'sine'; o2.frequency.value = f * 2;
+    var g2 = ctx.createGain(); g2.gain.setValueAtTime(.35, t); g2.gain.exponentialRampToValueAtTime(.001, t + dur * .4);
+    o1.connect(g); o2.connect(g2); g2.connect(g); g.connect(lp); lp.connect(bus);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(vel, t + .012);
+    g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    o1.start(t); o2.start(t); o1.stop(t + dur + .05); o2.stop(t + dur + .05);
+  }
+  function pad(t, chord, dur) {
+    chord.forEach(function (m) {
+      [1, 1.004].forEach(function (det) {
+        var o = ctx.createOscillator(); o.type = 'sine'; o.frequency.value = hz(m) * det;
+        var g = ctx.createGain();
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(.018, t + 1.4);
+        g.gain.setValueAtTime(.018, t + dur - .6);
+        g.gain.linearRampToValueAtTime(0, t + dur + .8);
+        o.connect(g); g.connect(bus);
+        o.start(t); o.stop(t + dur + 1);
+      });
+    });
+  }
+
+  function schedule(s, t) {
+    var barN = Math.floor(s / 8), e = s % 8;
+    var chord = CHORDS[barN % 4];
+    var h = Math.random() * .012;
+    if (e === 0) {
+      pluck(t, chord[0] - 12, .16, 3.2);
+      pad(t, chord, EIGHTH * 8);
+    }
+    pluck(t + h, chord[ARP[e]] + 12, e % 2 ? .035 : .05, 1.6);
+    var section = Math.floor(barN / 8) % 3;
+    if (section !== 2) {
+      MELODY[barN % 8].forEach(function (n) {
+        if (n[0] === e) pluck(t + h, n[1], .085, 2.6);
+      });
+    }
+  }
+  function tick() {
+    while (nextTime < ctx.currentTime + .3) {
+      schedule(step, nextTime);
+      nextTime += EIGHTH;
+      step++;
+    }
+  }
+
+  function fadeTo(v, sec) {
+    if (audio) {
+      var from = audio.volume, start = performance.now();
+      (function f() {
+        var k = Math.min(1, (performance.now() - start) / (sec * 1000));
+        audio.volume = from + (v - from) * k;
+        if (k < 1) requestAnimationFrame(f);
+      })();
+      return;
+    }
+    master.gain.cancelScheduledValues(ctx.currentTime);
+    master.gain.setValueAtTime(master.gain.value, ctx.currentTime);
+    master.gain.linearRampToValueAtTime(v, ctx.currentTime + sec);
+  }
+
+  function play() {
+    if (playing) return;
+    if (!started) {
+      started = true;
+      if (hasFile) {
+        audio = new Audio(FILE);
+        audio.loop = true;
+        audio.volume = 0;
+      } else {
+        setup();
+      }
+    }
+    playing = true;
+    if (audio) {
+      audio.play().catch(function () {});
+      fadeTo(.55, 2.5);
+    } else {
+      ctx.resume();
+      nextTime = ctx.currentTime + .15;
+      clearInterval(timer);
+      timer = setInterval(tick, 60);
+      tick();
+      fadeTo(.7, 3);
+    }
+    ui();
+  }
+  function pause() {
+    if (!playing) return;
+    playing = false;
+    fadeTo(0, .6);
+    setTimeout(function () {
+      if (playing) return;
+      if (audio) audio.pause();
+      else { clearInterval(timer); ctx.suspend(); }
+    }, 650);
+    ui();
+  }
+  function ui() {
+    var t = document.getElementById('musicToggle');
+    t.classList.add('show');
+    t.classList.toggle('playing', playing);
+    var ms = document.getElementById('musicStart');
+    ms.classList.toggle('on', playing);
+    ms.querySelector('.label').textContent = playing ? 'музыка играет' : 'включить музыку';
+  }
+  return {
+    play: play,
+    pause: pause,
+    toggle: function () { ducked = false; playing ? pause() : play(); },
+    duck: function () { if (playing) { ducked = true; pause(); } },
+    unduck: function () { if (ducked) { ducked = false; play(); } },
+    isPlaying: function () { return playing; }
+  };
+})();
+
+document.getElementById('musicStart').addEventListener('click', function () {
+  if (Music.isPlaying()) { Music.pause(); return; }
+  Music.play();
+  setTimeout(function () { document.getElementById('letter').scrollIntoView({ behavior: 'smooth' }); }, 700);
+});
+document.getElementById('musicToggle').addEventListener('click', function () { Music.toggle(); });
+
+/* ================= Lightbox ================= */
+(function () {
+  var lb = document.getElementById('lightbox');
+  var img = lb.querySelector('img');
+  var count = lb.querySelector('.ov-count');
+  var group = [], idx = 0;
+
+  function show(i) {
+    idx = (i + group.length) % group.length;
+    img.src = group[idx].querySelector('img').src;
+    count.textContent = group.length > 1 ? (idx + 1) + ' / ' + group.length : '';
+    lb.querySelector('.ov-prev').style.visibility = group.length > 1 ? '' : 'hidden';
+    lb.querySelector('.ov-next').style.visibility = group.length > 1 ? '' : 'hidden';
+  }
+  function close() { lb.classList.remove('open'); document.body.style.overflow = ''; }
+
+  document.addEventListener('click', function (e) {
+    var tile = e.target.closest && e.target.closest('[data-full]');
+    if (!tile) return;
+    var box = tile.closest('.tiles, .gallery');
+    group = [].slice.call(box.querySelectorAll('[data-full]'));
+    show(group.indexOf(tile));
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+  lb.querySelector('.ov-close').addEventListener('click', close);
+  lb.querySelector('.ov-prev').addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
+  lb.querySelector('.ov-next').addEventListener('click', function (e) { e.stopPropagation(); show(idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  img.addEventListener('click', function () { if (group.length > 1) show(idx + 1); else close(); });
+
+  var x0 = null, y0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(idx + (dx < 0 ? 1 : -1));
+    else if (dy > 80) close();
+    x0 = null;
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') show(idx + 1);
+    if (e.key === 'ArrowLeft') show(idx - 1);
+  });
+})();
+
+/* ================= Video player ================= */
+(function () {
+  var pl = document.getElementById('player');
+  var v = pl.querySelector('video');
+  function close() {
+    v.pause();
+    v.removeAttribute('src');
+    v.load();
+    pl.classList.remove('open');
+    document.body.style.overflow = '';
+    Music.unduck();
+  }
+  document.addEventListener('click', function (e) {
+    var tile = e.target.closest && e.target.closest('[data-video]');
+    if (!tile) return;
+    Music.duck();
+    v.poster = tile.querySelector('img').src;
+    v.src = tile.getAttribute('data-video');
+    pl.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    var p = v.play();
+    if (p && p.catch) p.catch(function () {});
+  });
+  pl.querySelector('.ov-close').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && pl.classList.contains('open')) close(); });
+  v.addEventListener('ended', close);
+  // iOS native fullscreen exit
+  v.addEventListener('webkitendfullscreen', function () { if (v.paused) close(); });
+})();
+
+/* ================= Reveal on scroll ================= */
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+
+/* ================= Gift ================= */
+(function () {
+  var stage = document.getElementById('giftStage');
+  var gift = document.getElementById('gift');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var opened = false;
+
+  function burst(x, y) {
+    if (reduce) return;
+    var symbols = ['❤️', '💗', '💜', '🩷', '✨'];
+    for (var i = 0; i < 36; i++) {
+      var h = document.createElement('span');
+      h.className = 'heart';
+      h.textContent = symbols[i % symbols.length];
+      h.style.left = x + 'px';
+      h.style.top = y + 'px';
+      h.style.fontSize = (16 + Math.random() * 18) + 'px';
+      document.body.appendChild(h);
+      var angle = Math.random() * Math.PI * 2;
+      var dist = 120 + Math.random() * 220;
+      var dx = Math.cos(angle) * dist;
+      var dy = Math.sin(angle) * dist - 120;
+      var anim = h.animate([
+        { transform: 'translate(-50%, -50%) scale(.4)', opacity: 1 },
+        { transform: 'translate(calc(-50% + ' + dx + 'px), calc(-50% + ' + dy + 'px)) scale(1) rotate(' + (Math.random() * 60 - 30) + 'deg)', opacity: 1, offset: .6 },
+        { transform: 'translate(calc(-50% + ' + dx + 'px), calc(-50% + ' + (dy + 160) + 'px)) scale(.9)', opacity: 0 }
+      ], { duration: 1800 + Math.random() * 900, easing: 'cubic-bezier(.2,.7,.3,1)' });
+      anim.onfinish = (function (el) { return function () { el.remove(); }; })(h);
+    }
+  }
+
+  gift.addEventListener('click', function () {
+    if (opened) return;
+    opened = true;
+    var r = gift.getBoundingClientRect();
+    stage.classList.add('opened');
+    gift.setAttribute('aria-hidden', 'true');
+    gift.tabIndex = -1;
+    burst(r.left + r.width / 2, r.top + r.height / 3);
+    setTimeout(function () { burst(r.left + r.width / 2, r.top + r.height / 3); }, 500);
+  });
+})();
+</script>
+</body>
+</html>
